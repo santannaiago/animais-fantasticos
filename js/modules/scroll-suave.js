@@ -18,8 +18,8 @@ export default class initScrollSuave {
 
   addLinkEvent () {
     linksInternos.forEach(link => {
-      link.addEventListener('click', this.scrollToSection
-    })
+      link.addEventListener('click', this.scrollToSection)
+    },)
   }
 
   init () {
