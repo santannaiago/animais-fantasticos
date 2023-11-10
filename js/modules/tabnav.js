@@ -41,15 +41,5 @@ export default class TabNav {
         });
       });
     }
-  }mMenu, index) => {
-      itemMenu.addEventListener('click', () => this.activeTab(index))
-    })
-  }
-
-  init () {
-    if (this.tabMenu.length && this.tabContent.length) {
-      this.activeTab(0)
-      this.addTabNavEvent()
-    }
   }
 }
