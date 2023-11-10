@@ -17,29 +17,23 @@ export default class TabNav {
     this.activeTab();
   }
 
-  activeTab () {
-    this.tabs.forEach((item, index) => {
-      item.addEventListener('click', () => {
-        this.tabs.forEach((item) => {
-          item.classList.remove('ativo');
-        });
-        item.classList.add('ativo');
-        this.tabsContent.forEach((item) => {
-          item.classList.remove('ativo');
-        });
-        this.tabsContent[index].classList.add('ativo');
-      });
-    });
+  activeTab (index) {
+    this.tabContent.forEach(section => {
+      section.classList.remove('ativo')
+    })
+    const direcao = this.tabContent[index].dataset.anime
+    this.tabContent[index].classList.add(this.activeClass, direcao)
   }
 
-  init() {
-    if (this.tabMenu.length && this.tabContent.length) {
-      this.tabContent[0].classList.add('ativo');
-      this.tabMenu.forEach((itemMenu, index) => {
-        itemMenu.addEventListener('click', () => {
-          activeTab(index);
-        });
-      });
-    }
+  addTabNavEvent () {
+    this.tabMenu.forEach((itemMenu, index) => {
+      itemMenu.addEventListener('click', () => this.activeTab(index))
+    })
   }
+
+  init () {
+    if (this.tabMenu.length && this.tabContent.length) {
+      this.activeTab(0)
+      this.addTabNavEvent()
+    }
 }
