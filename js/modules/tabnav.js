@@ -11,18 +11,6 @@ export default class TabNav {
     })
     const direcao = this.tabContent[index].dataset.anime
     this.tabContent[index].classList.add(this.activeClass, direcao)
-  }constructor (tabs, tabContent) {
-    this.tabs = document.querySelectorAll(tabs); //'[data-tab="menu"] li'
-    this.tabContent = document.querySelectorAll(tabContent); //'[data-tab="content"] section'
-    this.activeTab();
-  }
-
-  activeTab (index) {
-    this.tabContent.forEach(section => {
-      section.classList.remove('ativo')
-    })
-    const direcao = this.tabContent[index].dataset.anime
-    this.tabContent[index].classList.add(this.activeClass, direcao)
   }
 
   addTabNavEvent () {
