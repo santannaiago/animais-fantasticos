@@ -17,10 +17,10 @@ const accordion = new Accordion('[data-anime="accordion"] dt')
 accordion.init()
 
 const tabNav = new TabNav(
-    '[data-tab="menu"] li',
-    '[data-tab="content"] section'
-  )
-  tabNav.init()
+  '[data-tab="menu"] li',
+  '[data-tab="content"] section'
+)
+tabNav.init()
 
 initAnimacaoScroll()
 initTabNav()
